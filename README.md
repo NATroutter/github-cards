@@ -37,10 +37,10 @@
     - [Hide Progress Bars](#hide-progress-bars)
     - [Change format of language's stats](#change-format-of-languages-stats)
     - [Demo](#demo-2)
-- [All Demos](#all-demos)
-    - [Quick Tip (Align The Cards)](#quick-tip-align-the-cards)
-        - [Stats and top languages cards](#stats-and-top-languages-cards)
-        - [Pinning repositories](#pinning-repositories)
+- [All Demos](DEMO.md)
+- [Tips (Align The Cards)](#tips-align-the-cards)
+    - [Stats and top languages cards](#stats-and-top-languages-cards)
+    - [Pinning repositories](#pinning-repositories)
 - [Deploy on your own](#deploy-on-your-own)
     - [Get your Personal Access Token (PAT)](#get-your-personal-access-token-pat)
         - [Classic token](#classic-token)
@@ -551,103 +551,11 @@ You can use the `&stats_format=bytes` option to display the stats in bytes inste
 ### Demo
 
 ![Top Langs](https://github-cards.nat.gg/api/top-langs/?username=NATroutter)
-
-*   Compact layout
-
 ![Top Langs](https://github-cards.nat.gg/api/top-langs/?username=NATroutter&layout=compact)
-
-*   Donut Chart layout
-
-[![Top Langs](https://github-cards.nat.gg/api/top-langs/?username=NATroutter&layout=donut)](https://github.com/natroutter/github-cards)
-
-*   Donut Vertical Chart layout
-
-[![Top Langs](https://github-cards.nat.gg/api/top-langs/?username=NATroutter&layout=donut-vertical)](https://github.com/natroutter/github-cards)
-
-*   Pie Chart layout
-
-[![Top Langs](https://github-cards.nat.gg/api/top-langs/?username=NATroutter&layout=pie)](https://github.com/natroutter/github-cards)
-
-*   Hidden progress bars
-
-![Top Langs](https://github-cards.nat.gg/api/top-langs/?username=NATroutter&hide_progress=true)
-
-
-*  Display bytes instead of percentage
-
-![Top Langs](https://github-cards.nat.gg/api/top-langs/?username=NATroutter&stats_format=bytes)
-
-# All Demos
-
-*   Default
-
-![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter)
-
-*   Hiding specific stats
-
-![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&hide=contribs,issues)
-
-*   Showing additional stats
-
-![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&show_icons=true&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage)
-
-*   Showing icons
-
-![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&hide=issues&show_icons=true)
-
-*   Shows GitHub logo instead rank level
-
-![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&rank_icon=github)
-
-*   Shows user rank percentile instead of rank level
-
-![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&rank_icon=percentile)
-
-*   Customize Border Color
-
-![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&border_color=2e4058)
-
-*   Include All Commits
-
-![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&include_all_commits=true)
-
-*   Themes
-
-Choose from any of the [default themes](#themes)
-
-![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&show_icons=true&theme=radical)
-
-*   Gradient
-
-![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&bg_color=30,e96443,904e95&title_color=fff&text_color=fff)
-
-*   Customizing stats card
-
-![Anurag's GitHub stats](https://github-cards.nat.gg/api/?username=NATroutter&show_icons=true&title_color=fff&icon_color=79ff97&text_color=9f9f9f&bg_color=151515)
-
-*   Setting card locale
-
-![Anurag's GitHub stats](https://github-cards.nat.gg/api/?username=NATroutter&locale=es)
-
-*   Customizing repo card
-
-![Customized Card](https://github-cards.nat.gg/api/pin?username=NATroutter&repo=github-cards&title_color=fff&icon_color=f9f9f9&text_color=9f9f9f&bg_color=151515)
-
-*   Gist card
-
-![Gist Card](https://github-cards.nat.gg/api/gist?id=bbfce31e0217a3689c8d961a356cb10d)
-
-*   Customizing gist card
-
-![Gist Card](https://github-cards.nat.gg/api/gist?id=bbfce31e0217a3689c8d961a356cb10d&theme=calm)
-
-*   Top languages
-
-![Top Langs](https://github-cards.nat.gg/api/top-langs/?username=NATroutter)
 
 ***
 
-## Quick Tip (Align The Cards)
+## Tips (Align The Cards)
 
 By default, GitHub does not lay out the cards side by side. To do that, you can use such approaches:
 
