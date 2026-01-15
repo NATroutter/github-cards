@@ -1,0 +1,17 @@
+services:
+  github-cards:
+    image: ghcr.io/natroutter/github-cards:latest
+    container_name: github-cards
+    restart: unless-stopped
+    ports:
+      - 127.0.0.1:9000:9000 #For production
+    environment:
+      - CACHE_SECONDS=86400
+      - PAT_1=your_github_pat
+      - WHITELIST=NATroutter
+      - FETCH_MULTI_PAGE_STARS=false
+    healthcheck:
+      test: wget --no-verbose --tries=1 --spider http://localhost:9000/api/health || exit 1
+      interval: 10s
+      timeout: 5s
+      retries: 5
