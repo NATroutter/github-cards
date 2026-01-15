@@ -37,32 +37,25 @@
     - [Hide Progress Bars](#hide-progress-bars)
     - [Change format of language's stats](#change-format-of-languages-stats)
     - [Demo](#demo-2)
-- [WakaTime Stats Card](#wakatime-stats-card)
-    - [Options](#options-3)
-    - [Demo](#demo-3)
 - [All Demos](#all-demos)
     - [Quick Tip (Align The Cards)](#quick-tip-align-the-cards)
         - [Stats and top languages cards](#stats-and-top-languages-cards)
         - [Pinning repositories](#pinning-repositories)
 - [Deploy on your own](#deploy-on-your-own)
-    - [First step: get your Personal Access Token (PAT)](#first-step-get-your-personal-access-token-pat)
+    - [Get your Personal Access Token (PAT)](#get-your-personal-access-token-pat)
         - [Classic token](#classic-token)
         - [Fine-grained token](#fine-grained-token)
-    - [On Vercel](#on-vercel)
-        - [:film\_projector: Check Out Step By Step Video Tutorial By @codeSTACKr](#film_projector-check-out-step-by-step-video-tutorial-by-codestackr)
-    - [On other platforms](#on-other-platforms)
+    - [Docker](#docker)
     - [Available environment variables](#available-environment-variables)
-    - [Keep your fork up to date](#keep-your-fork-up-to-date)
-- [:sparkling\_heart: Support the project](#sparkling_heart-support-the-project)
 </details>
 
 # Important Notices <!-- omit in toc -->
 
 > [!IMPORTANT]
-> This is a personal fork of [github-readme-stats](https://github.com/anuraghazra/github-readme-stats) and is **not intended for public use**. This instance is configured specifically for my personal needs and may have custom modifications, restricted access, or different rate limits.
+> This is a personal fork of [github-cards](https://github.com/anuraghazra/github-cards) and is **not intended for public use**. This instance is configured specifically for my personal needs and may have custom modifications, restricted access, or different rate limits.
 >
-> **If you want to use github-readme-stats:**
-> - Fork the [original repository](https://github.com/anuraghazra/github-readme-stats) and deploy your own
+> **If you want to use github-cards:**
+> - Fork the [original repository](https://github.com/anuraghazra/github-cards) and deploy your own
 >
 > You are free to fork this repository and modify it however you like in accordance with the project's license.
 
@@ -73,14 +66,14 @@ Copy and paste this into your markdown, and that's it. Simple!
 Change the `?username=` value to your GitHub username.
 
 ```md
-[![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter)](https://github.com/natroutter/github-readme-stats)
+[![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter)](https://github.com/natroutter/github-cards)
 ```
 
 > [!WARNING]
 > By default, the stats card only shows statistics like stars, commits, and pull requests from public repositories. To show private statistics on the stats card, you should [deploy your own instance](#deploy-on-your-own) using your own GitHub API token.
 
 > [!NOTE]
-> Available ranks are S (top 1%), A+ (12.5%), A (25%), A- (37.5%), B+ (50%), B (62.5%), B- (75%), C+ (87.5%) and C (everyone). This ranking scheme is based on the [Japanese academic grading](https://wikipedia.org/wiki/Academic_grading_in_Japan) system. The global percentile is calculated as a weighted sum of percentiles for each statistic (number of commits, pull requests, reviews, issues, stars, and followers), based on the cumulative distribution function of the [exponential](https://wikipedia.org/wiki/exponential_distribution) and the [log-normal](https://wikipedia.org/wiki/Log-normal_distribution) distributions. The implementation can be investigated at [src/calculateRank.js](https://github.com/natroutter/github-readme-stats/blob/master/src/calculateRank.js). The circle around the rank shows 100 minus the global percentile.
+> Available ranks are S (top 1%), A+ (12.5%), A (25%), A- (37.5%), B+ (50%), B (62.5%), B- (75%), C+ (87.5%) and C (everyone). This ranking scheme is based on the [Japanese academic grading](https://wikipedia.org/wiki/Academic_grading_in_Japan) system. The global percentile is calculated as a weighted sum of percentiles for each statistic (number of commits, pull requests, reviews, issues, stars, and followers), based on the cumulative distribution function of the [exponential](https://wikipedia.org/wiki/exponential_distribution) and the [log-normal](https://wikipedia.org/wiki/Log-normal_distribution) distributions. The implementation can be investigated at [src/calculateRank.js](https://github.com/natroutter/github-cards/blob/master/src/calculateRank.js). The circle around the rank shows 100 minus the global percentile.
 
 ### Hiding individual stats
 
@@ -132,14 +125,13 @@ Use `&theme=THEME_NAME` parameter like so :
 
 GitHub Readme Stats comes with several built-in themes (e.g. `dark`, `radical`, `merko`, `gruvbox`, `tokyonight`, `onedark`, `cobalt`, `synthwave`, `highcontrast`, `dracula`).
 
-<img src="https://res.cloudinary.com/NATroutter/image/upload/v1595174536/grs-themes_l4ynja.png" alt="GitHub Readme Stats Themes" width="600px"/>
 
 You can look at a preview for [all available themes](themes/README.md) or checkout the [theme config file](themes/index.js). Please note that we paused the addition of new themes to decrease maintenance efforts; all pull requests related to new themes will be closed.
 
 #### Responsive Card Theme
 
-[![Anurag's GitHub stats-Dark](https://github-cards.nat.gg/api?username=NATroutter\&show_icons=true\&theme=dark#gh-dark-mode-only)](https://github.com/natroutter/github-readme-stats#responsive-card-theme#gh-dark-mode-only)
-[![Anurag's GitHub stats-Light](https://github-cards.nat.gg/api?username=NATroutter\&show_icons=true\&theme=default#gh-light-mode-only)](https://github.com/natroutter/github-readme-stats#responsive-card-theme#gh-light-mode-only)
+[![Anurag's GitHub stats-Dark](https://github-cards.nat.gg/api?username=NATroutter&show_icons=true&theme=dark#gh-dark-mode-only)](https://github.com/natroutter/github-cards#responsive-card-theme#gh-dark-mode-only)
+[![Anurag's GitHub stats-Light](https://github-cards.nat.gg/api?username=NATroutter&show_icons=true&theme=default#gh-light-mode-only)](https://github.com/natroutter/github-cards#responsive-card-theme#gh-light-mode-only)
 
 Since GitHub will re-upload the cards and serve them from their [CDN](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-anonymized-urls), we can not infer the browser/GitHub theme on the server side. There are, however, four methods you can use to create dynamics themes on the client side.
 
@@ -178,15 +170,15 @@ You can use the `bg_color` parameter to make any of [the available themes](theme
 You can use [GitHub's theme context](https://github.blog/changelog/2021-11-24-specify-theme-context-for-images-in-markdown/) tags to switch the theme based on the user GitHub theme automatically. This is done by appending `#gh-dark-mode-only` or `#gh-light-mode-only` to the end of an image URL. This tag will define whether the image specified in the markdown is only shown to viewers using a light or a dark GitHub theme:
 
 ```md
-[![Anurag's GitHub stats-Dark](https://github-cards.nat.gg/api?username=NATroutter&show_icons=true&theme=dark#gh-dark-mode-only)](https://github.com/natroutter/github-readme-stats#gh-dark-mode-only)
-[![Anurag's GitHub stats-Light](https://github-cards.nat.gg/api?username=NATroutter&show_icons=true&theme=default#gh-light-mode-only)](https://github.com/natroutter/github-readme-stats#gh-light-mode-only)
+[![Anurag's GitHub stats-Dark](https://github-cards.nat.gg/api?username=NATroutter&show_icons=true&theme=dark#gh-dark-mode-only)](https://github.com/natroutter/github-cards#gh-dark-mode-only)
+[![Anurag's GitHub stats-Light](https://github-cards.nat.gg/api?username=NATroutter&show_icons=true&theme=default#gh-light-mode-only)](https://github.com/natroutter/github-cards#gh-light-mode-only)
 ```
 
 <details>
 <summary>:eyes: Show example</summary>
 
-[![Anurag's GitHub stats-Dark](https://github-cards.nat.gg/api?username=NATroutter\&show_icons=true\&theme=dark#gh-dark-mode-only)](https://github.com/natroutter/github-readme-stats#gh-dark-mode-only)
-[![Anurag's GitHub stats-Light](https://github-cards.nat.gg/api?username=NATroutter\&show_icons=true\&theme=default#gh-light-mode-only)](https://github.com/natroutter/github-readme-stats#gh-light-mode-only)
+[![Anurag's GitHub stats-Dark](https://github-cards.nat.gg/api?username=NATroutter\&show_icons=true\&theme=dark#gh-dark-mode-only)](https://github.com/natroutter/github-cards#gh-dark-mode-only)
+[![Anurag's GitHub stats-Light](https://github-cards.nat.gg/api?username=NATroutter\&show_icons=true\&theme=default#gh-light-mode-only)](https://github.com/natroutter/github-cards#gh-light-mode-only)
 
 </details>
 
@@ -245,7 +237,7 @@ You can customize the appearance of all your cards however you wish with URL par
 | `border_radius` | Corner rounding on the card. | number | `4.5` |
 
 > [!WARNING]
-> We use caching to decrease the load on our servers (see <https://github.com/natroutter/github-readme-stats/issues/1471#issuecomment-1271551425>). Our cards have the following default cache hours: stats card - 24 hours, top languages card - 144 hours (6 days), pin card - 240 hours (10 days), gist card - 48 hours (2 days), and wakatime card - 24 hours. If you want the data on your cards to be updated more often you can [deploy your own instance](#deploy-on-your-own) and set [environment variable](#available-environment-variables) `CACHE_SECONDS` to a value of your choosing.
+> We use caching to decrease the load on our servers (see <https://github.com/natroutter/github-cards/issues/1471#issuecomment-1271551425>). Our cards have the following default cache hours: stats card - 24 hours, top languages card - 144 hours (6 days), pin card - 240 hours (10 days), gist card - 48 hours (2 days), and wakatime card - 24 hours. If you want the data on your cards to be updated more often you can [deploy your own instance](#deploy-on-your-own) and set [environment variable](#available-environment-variables) `CACHE_SECONDS` to a value of your choosing.
 
 ##### Gradient in bg\_color
 
@@ -364,10 +356,10 @@ Yay! You are no longer limited to 6 pinned repositories.
 
 Copy-paste this code into your readme and change the links.
 
-Endpoint: `api/pin?username=NATroutter&repo=github-readme-stats`
+Endpoint: `api/pin?username=NATroutter&repo=github-cards`
 
 ```md
-[![Readme Card](https://github-cards.nat.gg/api/pin/?username=NATroutter&repo=github-readme-stats)](https://github.com/natroutter/github-readme-stats)
+[![Readme Card](https://github-cards.nat.gg/api/pin/?username=NATroutter&repo=github-cards)](https://github.com/natroutter/github-cards)
 ```
 
 ### Options
@@ -381,11 +373,11 @@ You can customize the appearance and behavior of the pinned repository card usin
 
 ### Demo
 
-![Readme Card](https://github-cards.nat.gg/api/pin/?username=NATroutter\&repo=github-readme-stats)
+![Readme Card](https://github-cards.nat.gg/api/pin/?username=NATroutter&repo=github-cards)
 
 Use `show_owner` query option to include the repo's owner username
 
-![Readme Card](https://github-cards.nat.gg/api/pin/?username=NATroutter\&repo=github-readme-stats\&show_owner=true)
+![Readme Card](https://github-cards.nat.gg/api/pin/?username=NATroutter&repo=github-cards&show_owner=true)
 
 # GitHub Gist Pins
 
@@ -415,7 +407,7 @@ You can customize the appearance and behavior of the gist card using the [common
 
 Use `show_owner` query option to include the gist's owner username
 
-![Gist Card](https://github-cards.nat.gg/api/gist?id=bbfce31e0217a3689c8d961a356cb10d\&show_owner=true)
+![Gist Card](https://github-cards.nat.gg/api/gist?id=bbfce31e0217a3689c8d961a356cb10d&show_owner=true)
 
 # Top Languages Card
 
@@ -425,13 +417,13 @@ The top languages card shows a GitHub user's most frequently used languages.
 > By default, the language card shows language results only from public repositories. To include languages used in private repositories, you should [deploy your own instance](#deploy-on-your-own) using your own GitHub API token.
 
 > [!NOTE]
-> Top Languages does not indicate the user's skill level or anything like that; it's a GitHub metric to determine which languages have the most code on GitHub. It is a new feature of github-readme-stats.
+> Top Languages does not indicate the user's skill level or anything like that; it's a GitHub metric to determine which languages have the most code on GitHub. It is a new feature of github-cards.
 
 > [!WARNING]
 > This card shows language usage only inside your own non-forked repositories, not depending on who the author of the commits is. It does not include your contributions into another users/organizations repositories. Currently there are no way to get this data from GitHub API. If you want this behavior to be improved you can support [this feature request](https://github.com/orgs/community/discussions/18230) created by [@rickstaa](https://github.com/rickstaa) inside GitHub Community.
 
 > [!WARNING]
-> Currently this card shows data only about first 100 repositories. This is because GitHub API limitations which cause downtimes of public instances (see [#1471](https://github.com/natroutter/github-readme-stats/issues/1471)). In future this behavior will be improved by releasing GitHub action or providing environment variables for user's own instances.
+> Currently this card shows data only about first 100 repositories. This is because GitHub API limitations which cause downtimes of public instances (see [#1471](https://github.com/natroutter/github-cards/issues/1471)). In future this behavior will be improved by releasing GitHub action or providing environment variables for user's own instances.
 
 ### Usage
 
@@ -440,7 +432,7 @@ Copy-paste this code into your readme and change the links.
 Endpoint: `api/top-langs?username=NATroutter`
 
 ```md
-[![Top Langs](https://github-cards.nat.gg/api/top-langs/?username=NATroutter)](https://github.com/natroutter/github-readme-stats)
+[![Top Langs](https://github-cards.nat.gg/api/top-langs/?username=NATroutter)](https://github.com/natroutter/github-cards)
 ```
 
 ### Options
@@ -473,7 +465,7 @@ We use the following algorithm to calculate the languages percentages on the lan
 ranking_index = (byte_count ^ size_weight) * (repo_count ^ count_weight)
 ```
 
-By default, only the byte count is used for determining the languages percentages shown on the language card (i.e. `size_weight=1` and `count_weight=0`). You can, however, use the `&size_weight=` and `&count_weight=` options to weight the language usage calculation. The values must be positive real numbers. [More details about the algorithm can be found here](https://github.com/natroutter/github-readme-stats/issues/1600#issuecomment-1046056305).
+By default, only the byte count is used for determining the languages percentages shown on the language card (i.e. `size_weight=1` and `count_weight=0`). You can, however, use the `&size_weight=` and `&count_weight=` options to weight the language usage calculation. The values must be positive real numbers. [More details about the algorithm can be found here](https://github.com/natroutter/github-cards/issues/1600#issuecomment-1046056305).
 
 *   `&size_weight=1&count_weight=0` - *(default)* Orders by byte count.
 *   `&size_weight=0.5&count_weight=0.5` - *(recommended)* Uses both byte and repo count for ranking
@@ -488,7 +480,7 @@ By default, only the byte count is used for determining the languages percentage
 You can use the `&exclude_repo=repo1,repo2` parameter to exclude individual repositories.
 
 ```md
-![Top Langs](https://github-cards.nat.gg/api/top-langs/?username=NATroutter&exclude_repo=github-readme-stats,NATroutter.github.io)
+![Top Langs](https://github-cards.nat.gg/api/top-langs/?username=NATroutter&exclude_repo=github-cards,NATroutter.github.io)
 ```
 
 ### Hide individual languages
@@ -520,7 +512,7 @@ You can use the `&layout=compact` option to change the card design.
 You can use the `&layout=donut` option to change the card design.
 
 ```md
-[![Top Langs](https://github-cards.nat.gg/api/top-langs/?username=NATroutter&layout=donut)](https://github.com/natroutter/github-readme-stats)
+[![Top Langs](https://github-cards.nat.gg/api/top-langs/?username=NATroutter&layout=donut)](https://github.com/natroutter/github-cards)
 ```
 
 ### Donut Vertical Chart Language Card Layout
@@ -528,7 +520,7 @@ You can use the `&layout=donut` option to change the card design.
 You can use the `&layout=donut-vertical` option to change the card design.
 
 ```md
-[![Top Langs](https://github-cards.nat.gg/api/top-langs/?username=NATroutter&layout=donut-vertical)](https://github.com/natroutter/github-readme-stats)
+[![Top Langs](https://github-cards.nat.gg/api/top-langs/?username=NATroutter&layout=donut-vertical)](https://github.com/natroutter/github-cards)
 ```
 
 ### Pie Chart Language Card Layout
@@ -536,7 +528,7 @@ You can use the `&layout=donut-vertical` option to change the card design.
 You can use the `&layout=pie` option to change the card design.
 
 ```md
-[![Top Langs](https://github-cards.nat.gg/api/top-langs/?username=NATroutter&layout=pie)](https://github.com/natroutter/github-readme-stats)
+[![Top Langs](https://github-cards.nat.gg/api/top-langs/?username=NATroutter&layout=pie)](https://github.com/natroutter/github-cards)
 ```
 
 ### Hide Progress Bars
@@ -562,75 +554,28 @@ You can use the `&stats_format=bytes` option to display the stats in bytes inste
 
 *   Compact layout
 
-![Top Langs](https://github-cards.nat.gg/api/top-langs/?username=NATroutter\&layout=compact)
+![Top Langs](https://github-cards.nat.gg/api/top-langs/?username=NATroutter&layout=compact)
 
 *   Donut Chart layout
 
-[![Top Langs](https://github-cards.nat.gg/api/top-langs/?username=NATroutter\&layout=donut)](https://github.com/natroutter/github-readme-stats)
+[![Top Langs](https://github-cards.nat.gg/api/top-langs/?username=NATroutter&layout=donut)](https://github.com/natroutter/github-cards)
 
 *   Donut Vertical Chart layout
 
-[![Top Langs](https://github-cards.nat.gg/api/top-langs/?username=NATroutter\&layout=donut-vertical)](https://github.com/natroutter/github-readme-stats)
+[![Top Langs](https://github-cards.nat.gg/api/top-langs/?username=NATroutter&layout=donut-vertical)](https://github.com/natroutter/github-cards)
 
 *   Pie Chart layout
 
-[![Top Langs](https://github-cards.nat.gg/api/top-langs/?username=NATroutter\&layout=pie)](https://github.com/natroutter/github-readme-stats)
+[![Top Langs](https://github-cards.nat.gg/api/top-langs/?username=NATroutter&layout=pie)](https://github.com/natroutter/github-cards)
 
 *   Hidden progress bars
 
-![Top Langs](https://github-cards.nat.gg/api/top-langs/?username=NATroutter\&hide_progress=true)
+![Top Langs](https://github-cards.nat.gg/api/top-langs/?username=NATroutter&hide_progress=true)
 
 
 *  Display bytes instead of percentage
 
-![Top Langs](https://github-cards.nat.gg/api/top-langs/?username=NATroutter\&stats_format=bytes)
-
-# WakaTime Stats Card
-
-> [!WARNING]
-> Please be aware that we currently only show data from WakaTime profiles that are public. You therefore have to make sure that **BOTH** `Display code time publicly` and `Display languages, editors, os, categories publicly` are enabled.
-
-> [!WARNING]
-> In case you just created a new WakaTime account, then it might take up to 24 hours until your stats will become visible on the WakaTime stats card.
-
-Change the `?username=` value to your [WakaTime](https://wakatime.com) username.
-
-```md
-[![Harlok's WakaTime stats](https://github-cards.nat.gg/api/wakatime?username=ffflabs)](https://github.com/natroutter/github-readme-stats)
-```
-
-### Options
-
-You can customize the appearance and behavior of the WakaTime stats card using the [common options](#common-options) and exclusive options listed in the table below.
-
-| Name | Description | Type | Default value |
-| --- | --- | --- | --- |
-| `hide` | Hides the languages specified from the card. | string (comma-separated values) | `null` |
-| `hide_title` | Hides the title of your card. | boolean | `false` |
-| `card_width` | Sets the card's width manually. | number | `495` |
-| `line_height` | Sets the line height between text. | integer | `25` |
-| `hide_progress` | Hides the progress bar and percentage. | boolean | `false` |
-| `custom_title` | Sets a custom title for the card. | string | `WakaTime Stats` |
-| `layout` | Switches between two available layouts `default` & `compact`. | enum | `default` |
-| `langs_count` | Limits the number of languages on the card, defaults to all reported languages. | integer | `null` |
-| `api_domain` | Sets a custom API domain for the card, e.g. to use services like [Hakatime](https://github.com/mujx/hakatime) or [Wakapi](https://github.com/muety/wakapi) | string | `wakatime.com` |
-| `display_format` | Sets the WakaTime stats display format. Choose `time` to display time-based stats or `percent` to show percentages. | enum | `time` |
-| `disable_animations` | Disables all animations in the card. | boolean | `false` |
-
-> [!WARNING]
-> Custom title should be URI-escaped, as specified in [Percent Encoding](https://en.wikipedia.org/wiki/Percent-encoding) (i.e: `WakaTime Stats` should become `WakaTime%20Stats`). You can use [urlencoder.org](https://www.urlencoder.org/) to help you do this automatically.
-
-### Demo
-
-![Harlok's WakaTime stats](https://github-cards.nat.gg/api/wakatime?username=ffflabs)
-
-![Harlok's WakaTime stats](https://github-cards.nat.gg/api/wakatime?username=ffflabs\&hide_progress=true)
-
-*   Compact layout
-
-![Harlok's WakaTime stats](https://github-cards.nat.gg/api/wakatime?username=ffflabs\&layout=compact)
-
-***
+![Top Langs](https://github-cards.nat.gg/api/top-langs/?username=NATroutter&stats_format=bytes)
 
 # All Demos
 
@@ -640,53 +585,53 @@ You can customize the appearance and behavior of the WakaTime stats card using t
 
 *   Hiding specific stats
 
-![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter\&hide=contribs,issues)
+![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&hide=contribs,issues)
 
 *   Showing additional stats
 
-![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter\&show_icons=true\&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage)
+![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&show_icons=true&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage)
 
 *   Showing icons
 
-![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter\&hide=issues\&show_icons=true)
+![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&hide=issues&show_icons=true)
 
 *   Shows GitHub logo instead rank level
 
-![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter\&rank_icon=github)
+![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&rank_icon=github)
 
 *   Shows user rank percentile instead of rank level
 
-![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter\&rank_icon=percentile)
+![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&rank_icon=percentile)
 
 *   Customize Border Color
 
-![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter\&border_color=2e4058)
+![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&border_color=2e4058)
 
 *   Include All Commits
 
-![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter\&include_all_commits=true)
+![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&include_all_commits=true)
 
 *   Themes
 
 Choose from any of the [default themes](#themes)
 
-![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter\&show_icons=true\&theme=radical)
+![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&show_icons=true&theme=radical)
 
 *   Gradient
 
-![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter\&bg_color=30,e96443,904e95\&title_color=fff\&text_color=fff)
+![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&bg_color=30,e96443,904e95&title_color=fff&text_color=fff)
 
 *   Customizing stats card
 
-![Anurag's GitHub stats](https://github-cards.nat.gg/api/?username=NATroutter\&show_icons=true\&title_color=fff\&icon_color=79ff97\&text_color=9f9f9f\&bg_color=151515)
+![Anurag's GitHub stats](https://github-cards.nat.gg/api/?username=NATroutter&show_icons=true&title_color=fff&icon_color=79ff97&text_color=9f9f9f&bg_color=151515)
 
 *   Setting card locale
 
-![Anurag's GitHub stats](https://github-cards.nat.gg/api/?username=NATroutter\&locale=es)
+![Anurag's GitHub stats](https://github-cards.nat.gg/api/?username=NATroutter&locale=es)
 
 *   Customizing repo card
 
-![Customized Card](https://github-cards.nat.gg/api/pin?username=NATroutter\&repo=github-readme-stats\&title_color=fff\&icon_color=f9f9f9\&text_color=9f9f9f\&bg_color=151515)
+![Customized Card](https://github-cards.nat.gg/api/pin?username=NATroutter&repo=github-cards&title_color=fff&icon_color=f9f9f9&text_color=9f9f9f&bg_color=151515)
 
 *   Gist card
 
@@ -700,10 +645,6 @@ Choose from any of the [default themes](#themes)
 
 ![Top Langs](https://github-cards.nat.gg/api/top-langs/?username=NATroutter)
 
-*   WakaTime card
-
-![Harlok's WakaTime stats](https://github-cards.nat.gg/api/wakatime?username=ffflabs)
-
 ***
 
 ## Quick Tip (Align The Cards)
@@ -713,7 +654,7 @@ By default, GitHub does not lay out the cards side by side. To do that, you can 
 ### Stats and top languages cards
 
 ```html
-<a href="https://github.com/natroutter/github-readme-stats">
+<a href="https://github.com/natroutter/github-cards">
   <img height=200 align="center" src="https://github-cards.nat.gg/api?username=NATroutter" />
 </a>
 <a href="https://github.com/natroutter/convoychat">
@@ -724,7 +665,7 @@ By default, GitHub does not lay out the cards side by side. To do that, you can 
 <details>
 <summary>:eyes: Show example</summary>
 
-<a href="https://github.com/natroutter/github-readme-stats">
+<a href="https://github.com/natroutter/github-cards">
   <img height=200 align="center" src="https://github-cards.nat.gg/api?username=NATroutter" />
 </a>
 <a href="https://github.com/natroutter/convoychat">
@@ -736,29 +677,29 @@ By default, GitHub does not lay out the cards side by side. To do that, you can 
 ### Pinning repositories
 
 ```html
-<a href="https://github.com/natroutter/github-readme-stats">
-  <img align="center" src="https://github-cards.nat.gg/api/pin/?username=NATroutter&repo=github-readme-stats" />
+<a href="https://github.com/natroutter/egg-hytale">
+  <img align="center" src="https://github-cards.nat.gg/api/pin/?username=NATroutter&repo=egg-hytale" />
 </a>
-<a href="https://github.com/natroutter/convoychat">
-  <img align="center" src="https://github-cards.nat.gg/api/pin/?username=NATroutter&repo=convoychat" />
+<a href="https://github.com/natroutter/github-cards">
+  <img align="center" src="https://github-cards.nat.gg/api/pin/?username=NATroutter&repo=github-cards" />
 </a>
 ```
 
 <details>
 <summary>:eyes: Show example</summary>
 
-<a href="https://github.com/natroutter/github-readme-stats">
-  <img align="center" src="https://github-cards.nat.gg/api/pin/?username=NATroutter&repo=github-readme-stats" />
+<a href="https://github.com/natroutter/egg-hytale">
+  <img align="center" src="https://github-cards.nat.gg/api/pin/?username=NATroutter&repo=egg-hytale" />
 </a>
-<a href="https://github.com/natroutter/convoychat">
-  <img align="center" src="https://github-cards.nat.gg/api/pin/?username=NATroutter&repo=convoychat" />
+<a href="https://github.com/natroutter/github-cards">
+  <img align="center" src="https://github-cards.nat.gg/api/pin/?username=NATroutter&repo=github-cards" />
 </a>
 
 </details>
 
 # Deploy on your own
 
-## First step: get your Personal Access Token (PAT)
+## Get your Personal Access Token (PAT)
 
 For deploying your own instance of GitHub Readme Stats, you will need to create a GitHub Personal Access Token (PAT). Below are the steps to create one and the scopes you need to select for both classic and fine-grained tokens.
 
@@ -790,126 +731,24 @@ Selecting the right scopes for your token is important in case you want to displ
     * Pull requests: read-only
 * Click on `Generate token` and copy it.
 
-## On Vercel
+## Docker
 
-### :film\_projector: [Check Out Step By Step Video Tutorial By @codeSTACKr](https://youtu.be/n6d4KHSKqGk?t=107)
+<summary><b>:hammer_and_wrench: Step-by-step guide for deploying using docker</b></summary>
 
-Since the GitHub API only allows 5k requests per hour, my `https://github-cards.nat.gg/api` could possibly hit the rate limiter. If you host it on your own Vercel server, then you do not have to worry about anything. Click on the deploy button to get started!
-
-> [!NOTE]
-> Since [#58](https://github.com/natroutter/github-readme-stats/pull/58), we should be able to handle more than 5k requests and have fewer issues with downtime :grin:.
-
-> [!NOTE]
-> If you are on the [Pro (i.e. paid)](https://vercel.com/pricing) Vercel plan, the [maxDuration](https://vercel.com/docs/concepts/projects/project-configuration#value-definition) value found in the [vercel.json](https://github.com/natroutter/github-readme-stats/blob/master/vercel.json) can be increased when your Vercel instance frequently times out during the card request. You are advised to keep this value lower than `30` seconds to prevent high memory usage.
-
-[![Deploy to Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/natroutter/github-readme-stats)
-
-<details>
- <summary><b>:hammer_and_wrench: Step-by-step guide on setting up your own Vercel instance</b></summary>
-
-1.  Go to [vercel.com](https://vercel.com/).
-2.  Click on `Log in`.
-    ![](https://files.catbox.moe/pcxk33.png)
-3.  Sign in with GitHub by pressing `Continue with GitHub`.
-    ![](https://files.catbox.moe/b9oxey.png)
-4.  Sign in to GitHub and allow access to all repositories if prompted.
-5.  Fork this repo.
-6.  Go back to your [Vercel dashboard](https://vercel.com/dashboard).
-7.  To import a project, click the `Add New...` button and select the `Project` option.
-    ![](https://files.catbox.moe/3n76fh.png)
-8.  Click the `Continue with GitHub` button, search for the required Git Repository and import it by clicking the `Import` button. Alternatively, you can import a Third-Party Git Repository using the `Import Third-Party Git Repository ->` link at the bottom of the page.
-    ![](https://files.catbox.moe/mg5p04.png)
-9.  Create a Personal Access Token (PAT) as described in the [previous section](#first-step-get-your-personal-access-token-pat).
-10. Add the PAT as an environment variable named `PAT_1` (as shown).
-    ![](https://files.catbox.moe/0yclio.png)
-11. Click deploy, and you're good to go. See your domains to use the API!
-
-</details>
-
-## On other platforms
-
-> [!WARNING]
-> This way of using GRS is not officially supported and was added to cater to some particular use cases where Vercel could not be used (e.g. [#2341](https://github.com/natroutter/github-readme-stats/discussions/2341)). The support for this method, therefore, is limited.
-
-<details>
-<summary><b>:hammer_and_wrench: Step-by-step guide for deploying on other platforms</b></summary>
-
-1.  Fork or clone this repo as per your needs
-2.  Move `express` from the devDependencies to the dependencies section of `package.json`
-    <https://github.com/natroutter/github-readme-stats/blob/ba7c2f8b55eac8452e479c8bd38b044d204d0424/package.json#L54-L61>
-3.  Run `npm i` if needed (initial setup)
-4.  Run `node express.js` to start the server, or set the entry point to `express.js` in `package.json` if you're deploying on a managed service
-    <https://github.com/natroutter/github-readme-stats/blob/ba7c2f8b55eac8452e479c8bd38b044d204d0424/package.json#L11>
-5.  You're done 🎉
-    </details>
+1. Install docker by following their documentation at [docs.docker.com/engine/install/](https://docs.docker.com/engine/install/)
+2. Copy the [compose.yml](compose.yml) file to your host/machine
+3. Customize the compose file to your liking you need to at least change the PAT_1 variable for your GitHub access token see [Get your Personal Access Token (PAT)](#Get-your-personal-access-token-pat)
+3. run command ``docker compose up -d`` on the folder where you placed the compose file
+6. You're done 🎉
 
 ## Available environment variables
 
-GitHub Readme Stats provides several environment variables that can be used to customize the behavior of your self-hosted instance. These include:
+GitHub Cards provides several environment variables that can be used to customize the behavior of your self-hosted instance. These include:
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th>Supported values</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><code>CACHE_SECONDS</code></td>
-      <td>Sets the cache duration in seconds for the generated cards. This variable takes precedence over the default cache timings for the public instance. If this variable is not set, the default cache duration is 24 hours (86,400 seconds).</td>
-      <td>Any positive integer or <code>0</code> to disable caching</td>
-    </tr>
-    <tr>
-      <td><code>WHITELIST</code></td>
-      <td>A comma-separated list of GitHub usernames that are allowed to access your instance. If this variable is not set, all usernames are allowed.</td>
-      <td>Comma-separated GitHub usernames</td>
-    </tr>
-    <tr>
-      <td><code>GIST_WHITELIST</code></td>
-      <td>A comma-separated list of GitHub Gist IDs that are allowed to be accessed on your instance. If this variable is not set, all Gist IDs are allowed.</td>
-      <td>Comma-separated GitHub Gist IDs</td>
-    </tr>
-    <tr>
-      <td><code>EXCLUDE_REPO</code></td>
-      <td>A comma-separated list of repositories that will be excluded from stats and top languages cards on your instance. This allows repository exclusion without exposing repository names in public URLs. This enhances privacy for self-hosted instances that include private repositories in stats cards.</td>
-      <td>Comma-separated repository names</td>
-    </tr>
-    <tr>
-      <td><code>FETCH_MULTI_PAGE_STARS</code></td>
-      <td>Enables fetching all starred repositories for accurate star counts, especially for users with more than 100 repositories. This may increase response times and API points usage, so it is disabled on the public instance.</td>
-      <td><code>true</code> or <code>false</code></td>
-    </tr>
-  </tbody>
-</table>
-
-See [the Vercel documentation](https://vercel.com/docs/concepts/projects/environment-variables) on adding these environment variables to your Vercel instance.
-
-> [!WARNING]
-> Please remember to redeploy your instance after making any changes to the environment variables so that the updates take effect. The changes will not be applied to the previous deployments.
-
-## Keep your fork up to date
-
-You can keep your fork, and thus your private Vercel instance up to date with the upstream using GitHub's [Sync Fork button](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork). You can also use the [pull](https://github.com/wei/pull) package created by [@wei](https://github.com/wei) to automate this process.
-
-# :sparkling\_heart: Support the project
-
-I open-source almost everything I can and try to reply to everyone needing help using these projects. Obviously,
-this takes time. You can use this service for free.
-
-However, if you are using this project and are happy with it or just want to encourage me to continue creating stuff, there are a few ways you can do it:
-
-*   Giving proper credit when you use github-readme-stats on your readme, linking back to it. :D
-*   Starring and sharing the project. :rocket:
-*   [![paypal.me/NATroutter](https://ionicabizau.github.io/badges/paypal.svg)](https://www.paypal.me/NATroutter) - You can make a one-time donation via PayPal. I'll probably buy a ~~coffee~~ tea. :tea:
-
-Thanks! :heart:
-
-***
-
-[![https://vercel.com?utm\_source=github\_readme\_stats\_team\&utm\_campaign=oss](powered-by-vercel.svg)](https://vercel.com?utm_source=github_readme_stats_team\&utm_campaign=oss)
-
-Contributions are welcome! <3
-
-Made with :heart: and JavaScript.
+| Name                       | Description                                                                                                                                                                                                                                                                                              | Supported values                               |
+|----------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------|
+| `CACHE_SECONDS`            | Sets the cache duration in seconds for the generated cards. This variable takes precedence over the default cache timings for the public instance. If this variable is not set, the default cache duration is 24 hours (86,400 seconds).                                                                 | Any positive integer or `0` to disable caching |
+| `WHITELIST`                | A comma-separated list of GitHub usernames that are allowed to access your instance. If this variable is not set, all usernames are allowed.                                                                                                                                                             | Comma-separated GitHub usernames               |
+| `GIST_WHITELIST`           | A comma-separated list of GitHub Gist IDs that are allowed to be accessed on your instance. If this variable is not set, all Gist IDs are allowed.                                                                                                                                                       | Comma-separated GitHub Gist IDs                |
+| `EXCLUDE_REPO`             | A comma-separated list of repositories that will be excluded from stats and top languages cards on your instance. This allows repository exclusion without exposing repository names in public URLs. This enhances privacy for self-hosted instances that include private repositories in stats cards.   | Comma-separated repository names               |
+| `FETCH_MULTI_PAGE_STARS`   | Enables fetching all starred repositories for accurate star counts, especially for users with more than 100 repositories. This may increase response times and API points usage, so it is disabled on the public instance.                                                                               | `true` or `false`                              |

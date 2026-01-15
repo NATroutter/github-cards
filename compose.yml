@@ -4,7 +4,7 @@ services:
     container_name: github-cards
     restart: unless-stopped
     ports:
-      - 127.0.0.1:9000:9000 #For production
+      - "9000:9000" #For production
     environment:
       - CACHE_SECONDS=86400
       - PAT_1=your_github_pat
