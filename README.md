@@ -58,6 +58,8 @@
 > - Fork the [original repository](https://github.com/anuraghazra/github-cards) and deploy your own
 >
 > You are free to fork this repository and modify it however you like in accordance with the project's license.
+> 
+> *If you choose to ignore this notice and use my instance anyway, be warned it might go down at any time or change URL, etc.*
 
 # GitHub Stats Card
 
@@ -66,7 +68,7 @@ Copy and paste this into your markdown, and that's it. Simple!
 Change the `?username=` value to your GitHub username.
 
 ```md
-[![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter)](https://github.com/natroutter/github-cards)
+[![NATroutter's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter)](https://github.com/natroutter/github-cards)
 ```
 
 > [!WARNING]
@@ -82,7 +84,7 @@ You can pass a query parameter `&hide=` to hide any specific stats with comma-se
 > Options: `&hide=stars,commits,prs,issues,contribs`
 
 ```md
-![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&hide=contribs,prs)
+![NATroutter's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&hide=contribs,prs)
 ```
 
 ### Showing additional individual stats
@@ -92,7 +94,7 @@ You can pass a query parameter `&show=` to show any specific additional stats wi
 > Options: `&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage`
 
 ```md
-![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage)
+![NATroutter's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage)
 ```
 
 ### Showing icons
@@ -100,7 +102,7 @@ You can pass a query parameter `&show=` to show any specific additional stats wi
 To enable icons, you can pass `&show_icons=true` in the query param, like so:
 
 ```md
-![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&show_icons=true)
+![NATroutter's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&show_icons=true)
 ```
 
 ### Showing commits count for specified year
@@ -108,7 +110,7 @@ To enable icons, you can pass `&show_icons=true` in the query param, like so:
 You can specify a year and fetch only the commits that were made in that year by passing `&commits_year=YYYY` to the parameter.
 
 ```md
-![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&commits_year=2020)
+![NATroutter's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&commits_year=2020)
 ```
 
 ### Themes
@@ -118,20 +120,20 @@ With inbuilt themes, you can customize the look of the card without doing any [m
 Use `&theme=THEME_NAME` parameter like so :
 
 ```md
-![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&show_icons=true&theme=radical)
+![NATroutter's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&show_icons=true&theme=radical)
 ```
 
 #### All inbuilt themes
 
-GitHub Readme Stats comes with several built-in themes (e.g. `dark`, `radical`, `merko`, `gruvbox`, `tokyonight`, `onedark`, `cobalt`, `synthwave`, `highcontrast`, `dracula`).
+GitHub Cards comes with several built-in themes (e.g. `dark`, `radical`, `merko`, `gruvbox`, `tokyonight`, `onedark`, `cobalt`, `synthwave`, `highcontrast`, `dracula`).
 
 
 You can look at a preview for [all available themes](themes/README.md) or checkout the [theme config file](themes/index.js). Please note that we paused the addition of new themes to decrease maintenance efforts; all pull requests related to new themes will be closed.
 
 #### Responsive Card Theme
 
-[![Anurag's GitHub stats-Dark](https://github-cards.nat.gg/api?username=NATroutter&show_icons=true&theme=dark#gh-dark-mode-only)](https://github.com/natroutter/github-cards#responsive-card-theme#gh-dark-mode-only)
-[![Anurag's GitHub stats-Light](https://github-cards.nat.gg/api?username=NATroutter&show_icons=true&theme=default#gh-light-mode-only)](https://github.com/natroutter/github-cards#responsive-card-theme#gh-light-mode-only)
+[![NATroutter's GitHub stats-Dark](https://github-cards.nat.gg/api?username=NATroutter&show_icons=true&theme=dark#gh-dark-mode-only)](https://github.com/natroutter/github-cards#responsive-card-theme#gh-dark-mode-only)
+[![NATroutter's GitHub stats-Light](https://github-cards.nat.gg/api?username=NATroutter&show_icons=true&theme=default#gh-light-mode-only)](https://github.com/natroutter/github-cards#responsive-card-theme#gh-light-mode-only)
 
 Since GitHub will re-upload the cards and serve them from their [CDN](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/about-anonymized-urls), we can not infer the browser/GitHub theme on the server side. There are, however, four methods you can use to create dynamics themes on the client side.
 
@@ -140,13 +142,13 @@ Since GitHub will re-upload the cards and serve them from their [CDN](https://do
 We have included a `transparent` theme that has a transparent background. This theme is optimized to look good on GitHub's dark and light default themes. You can enable this theme using the `&theme=transparent` parameter like so:
 
 ```md
-![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&show_icons=true&theme=transparent)
+![NATroutter's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&show_icons=true&theme=transparent)
 ```
 
 <details>
 <summary>:eyes: Show example</summary>
 
-![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter\&show_icons=true\&theme=transparent)
+![NATroutter's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter\&show_icons=true\&theme=transparent)
 
 </details>
 
@@ -155,13 +157,13 @@ We have included a `transparent` theme that has a transparent background. This t
 You can use the `bg_color` parameter to make any of [the available themes](themes/README.md) transparent. This is done by setting the `bg_color` to a color with a transparent alpha channel (i.e. `bg_color=00000000`):
 
 ```md
-![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&show_icons=true&bg_color=00000000)
+![NATroutter's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&show_icons=true&bg_color=00000000)
 ```
 
 <details>
 <summary>:eyes: Show example</summary>
 
-![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter\&show_icons=true\&bg_color=00000000)
+![NATroutter's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter\&show_icons=true\&bg_color=00000000)
 
 </details>
 
@@ -170,15 +172,15 @@ You can use the `bg_color` parameter to make any of [the available themes](theme
 You can use [GitHub's theme context](https://github.blog/changelog/2021-11-24-specify-theme-context-for-images-in-markdown/) tags to switch the theme based on the user GitHub theme automatically. This is done by appending `#gh-dark-mode-only` or `#gh-light-mode-only` to the end of an image URL. This tag will define whether the image specified in the markdown is only shown to viewers using a light or a dark GitHub theme:
 
 ```md
-[![Anurag's GitHub stats-Dark](https://github-cards.nat.gg/api?username=NATroutter&show_icons=true&theme=dark#gh-dark-mode-only)](https://github.com/natroutter/github-cards#gh-dark-mode-only)
-[![Anurag's GitHub stats-Light](https://github-cards.nat.gg/api?username=NATroutter&show_icons=true&theme=default#gh-light-mode-only)](https://github.com/natroutter/github-cards#gh-light-mode-only)
+[![NATroutter's GitHub stats-Dark](https://github-cards.nat.gg/api?username=NATroutter&show_icons=true&theme=dark#gh-dark-mode-only)](https://github.com/natroutter/github-cards#gh-dark-mode-only)
+[![NATroutter's GitHub stats-Light](https://github-cards.nat.gg/api?username=NATroutter&show_icons=true&theme=default#gh-light-mode-only)](https://github.com/natroutter/github-cards#gh-light-mode-only)
 ```
 
 <details>
 <summary>:eyes: Show example</summary>
 
-[![Anurag's GitHub stats-Dark](https://github-cards.nat.gg/api?username=NATroutter\&show_icons=true\&theme=dark#gh-dark-mode-only)](https://github.com/natroutter/github-cards#gh-dark-mode-only)
-[![Anurag's GitHub stats-Light](https://github-cards.nat.gg/api?username=NATroutter\&show_icons=true\&theme=default#gh-light-mode-only)](https://github.com/natroutter/github-cards#gh-light-mode-only)
+[![NATroutter's GitHub stats-Dark](https://github-cards.nat.gg/api?username=NATroutter\&show_icons=true\&theme=dark#gh-dark-mode-only)](https://github.com/natroutter/github-cards#gh-dark-mode-only)
+[![NATroutter's GitHub stats-Light](https://github-cards.nat.gg/api?username=NATroutter\&show_icons=true\&theme=default#gh-light-mode-only)](https://github.com/natroutter/github-cards#gh-light-mode-only)
 
 </details>
 
@@ -235,9 +237,6 @@ You can customize the appearance of all your cards however you wish with URL par
 | `cache_seconds` | Sets the cache header manually (min: 21600, max: 86400). | integer | `21600` |
 | `locale` | Sets the language in the card, you can check full list of available locales [here](#available-locales). | enum | `en` |
 | `border_radius` | Corner rounding on the card. | number | `4.5` |
-
-> [!WARNING]
-> We use caching to decrease the load on our servers (see <https://github.com/natroutter/github-cards/issues/1471#issuecomment-1271551425>). Our cards have the following default cache hours: stats card - 24 hours, top languages card - 144 hours (6 days), pin card - 240 hours (10 days), gist card - 48 hours (2 days), and wakatime card - 24 hours. If you want the data on your cards to be updated more often you can [deploy your own instance](#deploy-on-your-own) and set [environment variable](#available-environment-variables) `CACHE_SECONDS` to a value of your choosing.
 
 ##### Gradient in bg\_color
 
@@ -339,7 +338,7 @@ If we don't support your language, please consider contributing! You can find mo
 | `commits_year` | Filters and counts only commits made in the specified year. | integer _(YYYY)_ | `<current year> (one year to date)` |
 
 > [!WARNING]
-> Custom title should be URI-escaped, as specified in [Percent Encoding](https://en.wikipedia.org/wiki/Percent-encoding) (i.e: `Anurag's GitHub Stats` should become `Anurag%27s%20GitHub%20Stats`). You can use [urlencoder.org](https://www.urlencoder.org/) to help you do this automatically.
+> Custom title should be URI-escaped, as specified in [Percent Encoding](https://en.wikipedia.org/wiki/Percent-encoding) (i.e: `NATroutter's GitHub Stats` should become `NATroutter%27s%20GitHub%20Stats`). You can use [urlencoder.org](https://www.urlencoder.org/) to help you do this automatically.
 
 > [!NOTE]
 > When hide\_rank=`true`, the minimum card width is 270 px + the title length and padding.
@@ -609,7 +608,7 @@ By default, GitHub does not lay out the cards side by side. To do that, you can 
 
 ## Get your Personal Access Token (PAT)
 
-For deploying your own instance of GitHub Readme Stats, you will need to create a GitHub Personal Access Token (PAT). Below are the steps to create one and the scopes you need to select for both classic and fine-grained tokens.
+For deploying your own instance of GitHub Cards, you will need to create a GitHub Personal Access Token (PAT). Below are the steps to create one and the scopes you need to select for both classic and fine-grained tokens.
 
 Selecting the right scopes for your token is important in case you want to display private contributions on your cards.
 

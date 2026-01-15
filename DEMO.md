@@ -35,35 +35,35 @@
 
 **Default**
 
-![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter)
+![NATroutter's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter)
 
 **Hide specific stats**
 
-![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&hide=contribs,issues)
+![NATroutter's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&hide=contribs,issues)
 
 **Show additional stats**
 
-![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&show_icons=true&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage)
+![NATroutter's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&show_icons=true&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage)
 
 **Show icons**
 
-![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&hide=issues&show_icons=true)
+![NATroutter's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&hide=issues&show_icons=true)
 
 **GitHub logo instead of rank level**
 
-![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&rank_icon=github)
+![NATroutter's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&rank_icon=github)
 
 **Rank percentile instead of rank level**
 
-![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&rank_icon=percentile)
+![NATroutter's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&rank_icon=percentile)
 
 **Custom border color**
 
-![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&border_color=2e4058)
+![NATroutter's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&border_color=2e4058)
 
 **Include all commits**
 
-![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&include_all_commits=true)
+![NATroutter's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&include_all_commits=true)
 
 ## Themes and Styling
 
@@ -71,19 +71,19 @@ Choose from any of the [themes](/themes/README.md)
 
 **Theme example**
 
-![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&show_icons=true&theme=radical)
+![NATroutter's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&show_icons=true&theme=radical)
 
 **Gradient background**
 
-![Anurag's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&bg_color=30,e96443,904e95&title_color=fff&text_color=fff)
+![NATroutter's GitHub stats](https://github-cards.nat.gg/api?username=NATroutter&bg_color=30,e96443,904e95&title_color=fff&text_color=fff)
 
 **Fully customized stats card**
 
-![Anurag's GitHub stats](https://github-cards.nat.gg/api/?username=NATroutter&show_icons=true&title_color=fff&icon_color=79ff97&text_color=9f9f9f&bg_color=151515)
+![NATroutter's GitHub stats](https://github-cards.nat.gg/api/?username=NATroutter&show_icons=true&title_color=fff&icon_color=79ff97&text_color=9f9f9f&bg_color=151515)
 
 **Localized card**
 
-![Anurag's GitHub stats](https://github-cards.nat.gg/api/?username=NATroutter&locale=es)
+![NATroutter's GitHub stats](https://github-cards.nat.gg/api/?username=NATroutter&locale=es)
 
 ## Repository and Gist Cards
 
