@@ -54,8 +54,8 @@
 > [!IMPORTANT]
 > This is a personal fork of [github-cards](https://github.com/anuraghazra/github-cards) and is **not intended for public use**. This instance is configured specifically for my personal needs and may have custom modifications, restricted access, or different rate limits.
 >
-> **If you want to use github-cards:**
-> - Fork the [original repository](https://github.com/anuraghazra/github-cards) and deploy your own
+> **If you want to use github-readme-stats:**
+> - Fork the [original repository](https://github.com/anuraghazra/github-readme-stats) and deploy your own
 >
 > You are free to fork this repository and modify it however you like in accordance with the project's license.
 > 
