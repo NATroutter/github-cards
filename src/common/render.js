@@ -1,7 +1,6 @@
 // @ts-check
 
 import { getCardColors } from "./color.js";
-import { SECONDARY_ERROR_MESSAGES, TRY_AGAIN_LATER } from "./error.js";
 import { encodeHTML } from "./html.js";
 import { clampValue } from "./ops.js";
 
@@ -118,11 +117,6 @@ const iconWithLabel = (icon, label, testid, iconSize) => {
 // Script parameters.
 const ERROR_CARD_LENGTH = 576.5;
 
-const UPSTREAM_API_ERRORS = [
-  TRY_AGAIN_LATER,
-  SECONDARY_ERROR_MESSAGES.MAX_RETRY,
-];
-
 /**
  * Renders error message on the card.
  *
@@ -135,7 +129,6 @@ const UPSTREAM_API_ERRORS = [
  * @param {string=} args.renderOptions.bg_color Card background color.
  * @param {string=} args.renderOptions.border_color Card border color.
  * @param {Parameters<typeof getCardColors>[0]["theme"]=} args.renderOptions.theme Card theme.
- * @param {boolean=} args.renderOptions.show_repo_link Whether to show repo link or not.
  * @returns {string} The SVG markup.
  */
 const renderError = ({
@@ -149,7 +142,6 @@ const renderError = ({
     bg_color,
     border_color,
     theme = "default",
-    show_repo_link = true,
   } = renderOptions;
 
   // returns theme based colors with proper overrides and defaults
@@ -173,11 +165,7 @@ const renderError = ({
     <rect x="0.5" y="0.5" width="${
       ERROR_CARD_LENGTH - 1
     }" height="99%" rx="4.5" fill="${bgColor}" stroke="${borderColor}"/>
-    <text x="25" y="45" class="text">Something went wrong!${
-      UPSTREAM_API_ERRORS.includes(secondaryMessage) || !show_repo_link
-        ? ""
-        : " file an issue at https://tiny.one/readme-stats"
-    }</text>
+    <text x="25" y="45" class="text">Something went wrong!</text>
     <text data-testid="message" x="25" y="55" class="text small">
       <tspan x="25" dy="18">${encodeHTML(message)}</tspan>
       <tspan x="25" dy="18" class="gray">${secondaryMessage}</tspan>

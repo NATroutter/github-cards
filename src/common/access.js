@@ -36,7 +36,6 @@ const guardAccess = ({ res, id, type, colors }) => {
         secondaryMessage: "Please deploy your own instance",
         renderOptions: {
           ...colors,
-          show_repo_link: false,
         },
       }),
     );
@@ -54,7 +53,6 @@ const guardAccess = ({ res, id, type, colors }) => {
         secondaryMessage: "Please deploy your own instance",
         renderOptions: {
           ...colors,
-          show_repo_link: false,
         },
       }),
     );
