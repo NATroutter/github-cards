@@ -87,4 +87,4 @@ const wrapTextMultiline = (text, width = 59, maxLines = 3) => {
   return multiLineText;
 };
 
-export { kFormatter, formatBytes, wrapTextMultiline };
+export { formatBytes, kFormatter, wrapTextMultiline };

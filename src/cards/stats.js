@@ -166,7 +166,6 @@ const getProgressAnimation = ({ progress }) => {
  * @returns {string} Card CSS styles.
  */
 const getStyles = ({
-  // eslint-disable-next-line no-unused-vars
   titleColor,
   textColor,
   iconColor,

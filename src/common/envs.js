@@ -12,4 +12,4 @@ const excludeRepositories = process.env.EXCLUDE_REPO
   ? process.env.EXCLUDE_REPO.split(",")
   : [];
 
-export { whitelist, gistWhitelist, excludeRepositories };
+export { excludeRepositories, gistWhitelist, whitelist };

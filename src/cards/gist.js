@@ -1,18 +1,5 @@
 // @ts-check
 
-import {
-  measureText,
-  flexLayout,
-  iconWithLabel,
-  createLanguageNode,
-} from "../common/render.js";
-import Card from "../common/Card.js";
-import { getCardColors } from "../common/color.js";
-import { kFormatter, wrapTextMultiline } from "../common/fmt.js";
-import { encodeHTML } from "../common/html.js";
-import { icons } from "../common/icons.js";
-import { parseEmojis } from "../common/ops.js";
-
 /** Import language colors.
  *
  * @description Here we use the workaround found in
@@ -21,6 +8,19 @@ import { parseEmojis } from "../common/ops.js";
  * --experimental-json-modules flag.
  */
 import { createRequire } from "module";
+import Card from "../common/Card.js";
+import { getCardColors } from "../common/color.js";
+import { kFormatter, wrapTextMultiline } from "../common/fmt.js";
+import { encodeHTML } from "../common/html.js";
+import { icons } from "../common/icons.js";
+import { parseEmojis } from "../common/ops.js";
+import {
+  createLanguageNode,
+  flexLayout,
+  iconWithLabel,
+  measureText,
+} from "../common/render.js";
+
 const require = createRequire(import.meta.url);
 const languageColors = require("../common/languageColors.json"); // now works
 
@@ -148,5 +148,5 @@ const renderGistCard = (gistData, options = {}) => {
   `);
 };
 
-export { renderGistCard, HEADER_MAX_LENGTH };
+export { HEADER_MAX_LENGTH, renderGistCard };
 export default renderGistCard;

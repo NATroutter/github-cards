@@ -1,0 +1,54 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.5.14/schema.json",
+  "vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
+  "files": { "ignoreUnknown": true },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineEnding": "auto",
+    "lineWidth": 80,
+    "includes": ["**", "!**/*.json", "!**/*.md"]
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "preset": "none",
+      "complexity": {
+        "noUselessTernary": "warn"
+      },
+      "correctness": {
+        "noConstAssign": "error",
+        "noInvalidConstructorSuper": "error",
+        "noInvalidUseBeforeDeclaration": "error",
+        "noUndeclaredVariables": "error",
+        "noUnreachableSuper": "error",
+        "noUnusedVariables": "warn",
+        "useParseIntRadix": "warn"
+      },
+      "style": {
+        "noNegationElse": "warn",
+        "useBlockStatements": "error",
+        "useConsistentObjectDefinitions": "warn"
+      },
+      "suspicious": {
+        "noAlert": "error",
+        "noClassAssign": "error",
+        "noDuplicateClassMembers": "error",
+        "noWith": "warn"
+      }
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "double",
+      "semicolons": "always",
+      "trailingCommas": "all",
+      "arrowParentheses": "always"
+    }
+  },
+  "assist": {
+    "enabled": true,
+    "actions": { "source": { "organizeImports": "on" } }
+  }
+}

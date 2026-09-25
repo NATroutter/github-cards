@@ -8,10 +8,10 @@ import { I18n } from "../common/I18n.js";
 import { icons } from "../common/icons.js";
 import { clampValue, parseEmojis } from "../common/ops.js";
 import {
-  flexLayout,
-  measureText,
-  iconWithLabel,
   createLanguageNode,
+  flexLayout,
+  iconWithLabel,
+  measureText,
 } from "../common/render.js";
 import { repoCardLocales } from "../translations.js";
 

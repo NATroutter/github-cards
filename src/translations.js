@@ -807,5 +807,5 @@ export {
   isLocaleAvailable,
   langCardLocales,
   repoCardLocales,
-  statCardLocales
+  statCardLocales,
 };

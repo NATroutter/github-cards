@@ -76,7 +76,7 @@ const retrieveSecondaryMessage = (err) => {
 export {
   CustomError,
   MissingParamError,
+  retrieveSecondaryMessage,
   SECONDARY_ERROR_MESSAGES,
   TRY_AGAIN_LATER,
-  retrieveSecondaryMessage,
 };

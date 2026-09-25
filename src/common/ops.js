@@ -114,11 +114,11 @@ const dateDiff = (d1, d2) => {
 };
 
 export {
-  parseBoolean,
-  parseArray,
-  clampValue,
-  lowercaseTrim,
   chunkArray,
-  parseEmojis,
+  clampValue,
   dateDiff,
+  lowercaseTrim,
+  parseArray,
+  parseBoolean,
+  parseEmojis,
 };

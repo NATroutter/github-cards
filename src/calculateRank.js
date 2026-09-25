@@ -39,7 +39,6 @@ function calculateRank({
   prs,
   issues,
   reviews,
-  // eslint-disable-next-line no-unused-vars
   repos, // unused
   stars,
   followers,

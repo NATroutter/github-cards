@@ -1,7 +1,7 @@
 // @ts-check
 
-import { SECONDARY_ERROR_MESSAGES, TRY_AGAIN_LATER } from "./error.js";
 import { getCardColors } from "./color.js";
+import { SECONDARY_ERROR_MESSAGES, TRY_AGAIN_LATER } from "./error.js";
 import { encodeHTML } from "./html.js";
 import { clampValue } from "./ops.js";
 
@@ -195,7 +195,7 @@ const renderError = ({
  * @returns {number} Text length.
  */
 const measureText = (str, fontSize = 10) => {
-  // prettier-ignore
+  // biome-ignore format: keep lookup table layout
   const widths = [
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
     0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
@@ -229,11 +229,11 @@ const measureText = (str, fontSize = 10) => {
 };
 
 export {
-  ERROR_CARD_LENGTH,
-  renderError,
   createLanguageNode,
   createProgressNode,
-  iconWithLabel,
+  ERROR_CARD_LENGTH,
   flexLayout,
+  iconWithLabel,
   measureText,
+  renderError,
 };

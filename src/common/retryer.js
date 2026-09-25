@@ -74,7 +74,7 @@ const retryer = async (fetcher, variables, retries = 0) => {
       throw e;
     }
 
-    // prettier-ignore
+    // biome-ignore format: keep line break
     // also checking for bad credentials if any tokens gets invalidated
     const isBadCredential =
       e?.response?.data?.message === "Bad credentials";
@@ -93,5 +93,5 @@ const retryer = async (fetcher, variables, retries = 0) => {
   }
 };
 
-export { retryer, RETRIES };
+export { RETRIES, retryer };
 export default retryer;

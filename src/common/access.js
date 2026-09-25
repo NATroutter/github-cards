@@ -1,8 +1,8 @@
 // @ts-check
 
-import { renderError } from "./render.js";
 import { blacklist } from "./blacklist.js";
-import { whitelist, gistWhitelist } from "./envs.js";
+import { gistWhitelist, whitelist } from "./envs.js";
+import { renderError } from "./render.js";
 
 const NOT_WHITELISTED_USERNAME_MESSAGE = "This username is not whitelisted";
 const NOT_WHITELISTED_GIST_MESSAGE = "This gist ID is not whitelisted";
@@ -20,9 +20,7 @@ const BLACKLISTED_MESSAGE = "This username is blacklisted";
  */
 const guardAccess = ({ res, id, type, colors }) => {
   if (!["username", "gist"].includes(type)) {
-    throw new Error(
-      'Invalid type. Expected "username", "gist".',
-    );
+    throw new Error('Invalid type. Expected "username", "gist".');
   }
 
   const currentWhitelist = type === "gist" ? gistWhitelist : whitelist;

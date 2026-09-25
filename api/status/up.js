@@ -8,8 +8,8 @@
  */
 
 import { request } from "../../src/common/http.js";
-import retryer from "../../src/common/retryer.js";
 import { logger } from "../../src/common/log.js";
+import retryer from "../../src/common/retryer.js";
 
 export const RATE_LIMIT_SECONDS = 60 * 5; // 1 request per 5 minutes
 
@@ -88,10 +88,7 @@ export default async (req, res) => {
     let PATsValid = true;
     try {
       await retryer(uptimeFetcher, {});
-    } catch (err) {
-      // Resolve eslint no-unused-vars
-      err;
-
+    } catch {
       PATsValid = false;
     }
 
