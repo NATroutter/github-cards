@@ -37,6 +37,11 @@
     - [Hide Progress Bars](#hide-progress-bars)
     - [Change format of language's stats](#change-format-of-languages-stats)
     - [Demo](#demo-2)
+- [Activity Graph](#activity-graph)
+    - [Usage](#usage-3)
+    - [Options](#options-3)
+    - [Themes](#themes-1)
+    - [Demo](#demo-3)
 - [All Demos](DEMO.md)
 - [Tips (Align The Cards)](#tips-align-the-cards)
     - [Stats and top languages cards](#stats-and-top-languages-cards)
@@ -46,6 +51,7 @@
         - [Classic token](#classic-token)
         - [Fine-grained token](#fine-grained-token)
     - [Docker](#docker)
+    - [Local development](#local-development)
     - [Available environment variables](#available-environment-variables)
 </details>
 
@@ -552,6 +558,63 @@ You can use the `&stats_format=bytes` option to display the stats in bytes inste
 ![Top Langs](https://github-cards.nat.gg/api/top-langs/?username=NATroutter)
 ![Top Langs](https://github-cards.nat.gg/api/top-langs/?username=NATroutter&layout=compact)
 
+# Activity Graph
+
+The activity graph shows a GitHub user's daily contributions as a line chart. It works the same way as [github-readme-activity-graph](https://github.com/ashutosh00710/github-readme-activity-graph) and accepts the same URL options, so an old URL only needs its domain changed.
+
+### Usage
+
+Copy-paste this code into your readme and change the links.
+
+Endpoint: `graph?username=NATroutter` (also available as `api/graph`)
+
+```md
+[![Activity Graph](https://github-cards.nat.gg/graph?username=NATroutter)](https://github.com/natroutter/github-cards)
+```
+
+### Options
+
+Colors are hex codes without `#`. An 8-digit code sets transparency, for example `ffffff00` for a transparent background.
+
+| Name | Description | Type | Default value |
+| --- | --- | --- | --- |
+| `username` | GitHub username. Required. | string | |
+| `theme` | Name of an [activity graph theme](#themes-1). | enum | `default` |
+| `custom_title` | Replaces the default title. | string | `<name>'s Contribution Graph` |
+| `hide_title` | Hides the title. | boolean | `false` |
+| `bg_color` | Background color. | string (hex color) | from theme |
+| `color` | Color of the axis labels and grid. Also used for the title when `title_color` is not set. | string (hex color) | from theme |
+| `title_color` | Title color. | string (hex color) | from theme |
+| `line` | Line color. | string (hex color) | from theme |
+| `point` | Point color. | string (hex color) | from theme |
+| `area` | Fills the area under the line. | boolean | `false` |
+| `area_color` | Area color. | string (hex color) | from theme |
+| `hide_border` | Hides the border. | boolean | `false` |
+| `border_color` | Border color. | string (hex color) | from theme |
+| `radius` | Border radius, from `0` to `16`. | number | `0` |
+| `height` | Card height, from `200` to `600`. | number | `420` |
+| `days` | Number of days to show, from `1` to `90`. | number | `31` |
+| `from` | Start date of a custom range, as `YYYY-MM-DD`. Use together with `to`. | string | |
+| `to` | End date of a custom range, as `YYYY-MM-DD`. The range can be at most 1 year and cannot end in the future. An invalid range falls back to the last 31 days. | string | |
+| `grid` | Shows the grid lines. | boolean | `true` |
+| `cache_seconds` | Sets the cache header manually, from `1800` to `86400`. The `CACHE_SECONDS` environment variable overrides it. | integer | `1800` |
+
+### Themes
+
+Use `&theme=THEME_NAME` to apply one of these themes:
+
+`default`, `github`, `github-light`, `github-compact`, `github-dark`, `github-dark-dimmed`, `dracula`, `gruvbox`, `gotham`, `rogue`, `xcode`, `redical`, `radical`, `coral`, `react`, `react-dark`, `nord`, `lucent`, `chartreuse-dark`, `minimal`, `material-palenight`, `green`, `noctis-minimus`, `one-dark`, `monokai`, `elegant`, `aqua`, `synthwave-84`, `merko`, `vue`, `tokyo-day`, `tokyo-night`, `high-contrast`, `cobalt`, `material`, `nightowl`, `modern-lilac`, `arctic`
+
+The themes are the same as in github-readme-activity-graph and are separate from the stats card themes.
+
+### Demo
+
+![Activity Graph](https://github-cards.nat.gg/graph?username=NATroutter&theme=github-dark&area=true&radius=8)
+
+Use your own colors:
+
+![Activity Graph](https://github-cards.nat.gg/graph?username=NATroutter&custom_title=NATroutter's%20Activity%20Graph&bg_color=ffffff00&border_color=9A0000&title_color=9A0000&color=ffffff&line=4F0000&point=9A0000)
+
 ***
 
 ## Tips (Align The Cards)
@@ -647,6 +710,35 @@ Selecting the right scopes for your token is important in case you want to displ
 3. Customize the compose file to your liking you need to at least change the PAT_1 variable for your GitHub access token see [Get your Personal Access Token (PAT)](#Get-your-personal-access-token-pat)
 3. run command ``docker compose up -d`` on the folder where you placed the compose file
 6. You're done 🎉
+
+## Local development
+
+You need [Node.js](https://nodejs.org/) 22 or newer and [pnpm](https://pnpm.io/installation). The pnpm version is pinned in `package.json`, so `corepack enable pnpm` installs the right one.
+
+1. Clone the repository and install the dependencies:
+    ```sh
+    git clone https://github.com/NATroutter/github-cards.git
+    cd github-cards
+    pnpm install
+    ```
+2. Create a `.env` file with your GitHub token, see [Get your Personal Access Token (PAT)](#get-your-personal-access-token-pat). You can also add any of the [environment variables](#available-environment-variables).
+    ```sh
+    PAT_1=your_github_pat
+    ```
+3. Start the development server. It restarts when you change a file.
+    ```sh
+    pnpm dev
+    ```
+4. Open [http://localhost:9000/api?username=NATroutter](http://localhost:9000/api?username=NATroutter).
+
+| Command | Description |
+| --- | --- |
+| `pnpm dev` | Starts the server and restarts it on file changes. |
+| `pnpm start` | Starts the server. |
+| `pnpm lint` | Checks the code with Biome. Warnings fail the check. |
+| `pnpm format` | Formats the code with Biome. |
+| `pnpm format:check` | Checks the formatting without changing files. |
+| `pnpm check` | Formats, lints and sorts imports, and applies safe fixes. |
 
 ## Available environment variables
 
